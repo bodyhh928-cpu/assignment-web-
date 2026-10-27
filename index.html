@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdelrahman Abdelnaby – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F7;--surface:#FFFFFF;--ink:#16213E;--muted:#55607C;--line:#CBD2E3;--accent:#2B4EFF;--accent-ink:#FFFFFF;--mark:#FFD94A;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1426;--surface:#171E36;--ink:#EAEEFB;--muted:#9AA5C6;--line:#2B3557;--accent:#7C93FF;--accent-ink:#0F1426;--mark:#FFD94A}
+}
+:root[data-theme="dark"]{--bg:#0F1426;--surface:#171E36;--ink:#EAEEFB;--muted:#9AA5C6;--line:#2B3557;--accent:#7C93FF;--accent-ink:#0F1426;--mark:#FFD94A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;margin:0;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+header.hero{padding:72px 0 56px}
+.hero h1{font-weight:800;font-size:clamp(44px,12vw,104px);letter-spacing:-.03em}
+.hero h1 span{display:block;background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);width:max-content;max-width:100%}
+.hero p.role{margin:28px 0 0;font-size:clamp(18px,3.4vw,22px);color:var(--muted);max-width:34em}
+.hero p.role strong{color:var(--ink);font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:500;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+section{padding:48px 0;border-top:2px solid var(--line)}
+section h2{font-weight:800;font-size:clamp(28px,6vw,40px);letter-spacing:-.02em;margin-bottom:18px}
+.about p{max-width:40em;margin:0 0 14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:22px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.fact b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:19px;font-weight:500}
+.fact span{color:var(--muted);font-size:15px}
+
+.course{display:flex;flex-wrap:wrap;gap:8px 16px;color:var(--muted);margin:-6px 0 22px}
+#list{display:grid;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.card h3{font-weight:500;font-size:22px;margin-bottom:6px}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card .links{display:flex;flex-wrap:wrap;gap:10px}
+.card .links a{padding:8px 14px;border:1.5px solid var(--accent);border-radius:8px;text-decoration:none;color:var(--accent);font-weight:500;font-size:15px}
+.view{margin:0 0 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.view summary{cursor:pointer;padding:10px 14px;font-weight:500}
+.scroll{overflow-x:auto;padding:0 14px 14px}
+.view table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+.view th,.view td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+.view th{background:var(--ink);color:var(--bg)}
+.view td:first-child{font-weight:500;white-space:nowrap}
+.demo{background:#fff;color:#000;font-family:"Times New Roman",Times,serif;font-size:16px;line-height:normal;padding:14px 16px;border:1px solid var(--line);border-radius:10px;margin:0 0 16px;overflow-x:auto}
+.demo h1,.demo h2{font-family:inherit;letter-spacing:normal;line-height:1.2}
+.demo h1{font-size:32px;margin:.4em 0}
+.demo h2{font-size:24px;font-weight:700;margin:.6em 0 .3em}
+.demo p{margin:.6em 0}
+.demo ul,.demo ol{margin:.4em 0;padding-left:34px}
+.demo a{color:#551A8B;text-decoration:underline}
+.code{margin:0;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre}
+.card .fname{margin:0 0 6px;color:var(--ink);font:500 14px ui-monospace,Menlo,Consolas,monospace}
+.demo.tall{max-height:230px;overflow:auto}
+.demo table{margin:0 auto}
+.ph{display:inline-block;padding:18px 28px;border:2px dashed #888;color:#555;font:14px ui-monospace,Menlo,Consolas,monospace}
+.empty{border:2px dashed var(--line);border-radius:14px;padding:28px 22px;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:21px;font-weight:500;margin-bottom:4px}
+
+.contact ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.contact li{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.contact li span{min-width:84px;color:var(--muted)}
+.contact a{font-weight:500;overflow-wrap:anywhere}
+footer{padding:28px 0 40px;border-top:2px solid var(--line);color:var(--muted);font-size:15px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1><span>Abdelrahman</span><span>Abdelnaby</span></h1>
+    <p class="role"><strong>Software Engineering student</strong>, second year. This portfolio collects my work for the Web Design &amp; Development course.</p>
+    <div class="btns">
+      <a class="btn primary" href="#assignments">View assignments</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </header>
+
+  <section class="about" id="about">
+    <h2>About me</h2>
+    <p>I’m Abdelrahman Abdelnaby Abdelrahman, a second-year student in the Software Engineering department. I’m learning to design and build websites with HTML, CSS and JavaScript, and I’m using this page to show what I make along the way.</p>
+    <div class="facts">
+      <div class="fact"><b>Software Engineering</b><span>Department</span></div>
+      <div class="fact"><b>Second year</b><span>Level</span></div>
+      <div class="fact"><b>Web Design &amp; Development</b><span>Course</span></div>
+      <div class="fact"><b>252000854</b><span>Student code</span></div>
+    </div>
+  </section>
+
+  <section id="assignments">
+    <h2>Assignments</h2>
+    <div class="course"><span>Web Design &amp; Development</span></div>
+    <div id="list"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><span>Email</span><a href="mailto:bodyhh928@gmail.com">bodyhh928@gmail.com</a></li>
+      <li><span>Phone</span><a href="tel:+201022367168">01022367168</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/abdelrahman-abdelnaby-389516430" target="_blank" rel="noopener">Abdelrahman Abdelnaby</a></li>
+      <li><span>GitHub</span><a href="https://github.com/bodyhh928-cpu" target="_blank" rel="noopener">github.com/bodyhh928-cpu</a></li>
+    </ul>
+  </section>
+
+  <footer>Abdelrahman Abdelnaby · Software Engineering · Web Design &amp; Development</footer>
+</div>
+
+<script>
+// Add each assignment here: { title, description, links: [{label, url}] }
+var assignments = [
+  {
+    title: 'Assignment 2 · Task 1: Linked pages',
+    description: 'Two linked pages. In index.html the “click here” link jumps to the end section of page2.html, and in page2.html the “search using Google” link opens in a new tab.',
+    code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My index</title>
+</head>
+<body>
+  <h1 align="center" style="color:red; font-family:Arial; font-style:italic;">This my First website</h1>
+
+  <center>
+    <font size="5"><b>this text is bold with size 5 The standard Lorem Ipsum passage</b></font>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+  </center>
+
+  <hr>
+
+  <h2><u>TASKS</u></h2>
+  <ul type="square">
+    <li><b>first task</b></li>
+    <li><b><font color="red">second task</font></b>
+      <ol type="i" style="color:blue;">
+        <li><b>nested item</b>
+          <ul type="square" style="color:green;">
+            <li><b>nested item</b></li>
+            <li><b>nested item</b></li>
+          </ul>
+        </li>
+        <li><b>nested item</b></li>
+      </ol>
+    </li>
+    <li><b><u>third task==>></u></b> <a href="page2.html#end">click here</a></li>
+  </ul>
+</body>
+</html>`,
+    extra: [
+      {
+        name: 'page2.html',
+        tall: true,
+        code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>page2</title>
+</head>
+<body>
+  <h3 align="center" style="color:red; font-family:monospace; font-weight:normal;">start</h3>
+  <a href="https://www.google.com" target="_blank">search using Google</a>
+
+  <div style="height:1200px;"></div>
+
+  <p id="end" align="right" style="color:red; font-family:monospace;">end</p>
+</body>
+</html>`
+      }
+    ]
+  },
+  {
+    title: 'Assignment 2 · Task 2: Table',
+    description: 'table.html: a table that merges cells with colspan and rowspan, with a green full-width row and a red city name.',
+    file: 'table.html',
+    code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table</title>
+</head>
+<body>
+  <table border="1" cellpadding="10" align="center" width="350">
+    <tr>
+      <th colspan="2">name</th>
+      <th rowspan="2">Address</th>
+    </tr>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+    </tr>
+    <tr>
+      <td colspan="3" bgcolor="green" align="center">All the data is here</td>
+    </tr>
+    <tr>
+      <td colspan="2" rowspan="2" align="center">Hamada</td>
+      <td align="center"><font color="red">cairo</font></td>
+    </tr>
+    <tr>
+      <td align="center">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</td>
+    </tr>
+  </table>
+</body>
+</html>`
+  },
+  {
+    title: 'Assignment 2 · Task 3: Image link and favicon',
+    description: 'An image that works as a link: clicking it opens Google in a new tab. The favicon and the page title (My Lab) are set in the head. The dashed box here stands in for the logo image, which sits next to the HTML file.',
+    file: 'image-link.html',
+    code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Lab</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <center>
+    <a href="https://www.google.com" target="_blank">
+      <img src="google-logo.png" alt="Google" width="270">
+    </a>
+  </center>
+</body>
+</html>`
+  },
+  {
+    title: 'GET vs POST',
+    description: 'A comparison of the two main HTTP methods: purpose, data location, security, caching, and when to use each, with HTML form examples.',
+    table: [
+      ["Feature", "GET", "POST"],
+      ["Purpose", "Retrieve data from the server", "Send data to the server to create or process something"],
+      ["Where data goes", "In the URL query string", "In the request body"],
+      ["Visibility", "Visible in the URL, browser history and server logs", "Not shown in the URL (but not encrypted without HTTPS)"],
+      ["Security", "Not suitable for passwords or sensitive data", "Better for sensitive data, especially over HTTPS"],
+      ["Data length", "Limited by URL length", "No practical limit on body size"],
+      ["Data types", "Text only (URL-encoded)", "Text, JSON, files and binary data"],
+      ["Bookmarking", "Can be bookmarked and shared as a link", "Cannot be bookmarked with its data"],
+      ["Caching", "Can be cached by browsers and proxies", "Not cached by default"],
+      ["Idempotent", "Yes: repeating it gives the same result", "No: repeating it may create duplicates"],
+      ["Safe (read-only)", "Yes, it should not change server data", "No, it usually changes server state"],
+      ["Typical uses", "Search, filtering, pagination, loading pages", "Login, sign-up, contact forms, file uploads"]
+    ],
+    links: [{ label: 'Open PDF', url: 'GET_vs_POST.pdf' }]
+  }
+];
+
+(function(){
+  var list = document.getElementById('list');
+  if (!assignments.length) {
+    list.innerHTML = '<div class="empty"><b>Assignments are on the way</b>Each one will appear here with a short description and a link to open it.</div>';
+    return;
+  }
+  assignments.forEach(function(a){
+    var card = document.createElement('article');
+    card.className = 'card';
+    var h = document.createElement('h3'); h.textContent = a.title;
+    var p = document.createElement('p'); p.textContent = a.description || '';
+    var box = document.createElement('div'); box.className = 'links';
+    (a.links || []).forEach(function(l){
+      var link = document.createElement('a');
+      link.href = l.url; link.textContent = l.label;
+      link.target = '_blank'; link.rel = 'noopener';
+      box.appendChild(link);
+    });
+    card.appendChild(h); card.appendChild(p);
+    if (a.table) {
+      var d = document.createElement('details'); d.className = 'view'; d.open = true;
+      var s = document.createElement('summary'); s.textContent = 'View the comparison here';
+      var sc = document.createElement('div'); sc.className = 'scroll';
+      var tb = document.createElement('table');
+      a.table.forEach(function(r, i){
+        var tr = document.createElement('tr');
+        r.forEach(function(c){
+          var cell = document.createElement(i === 0 ? 'th' : 'td'); cell.textContent = c; tr.appendChild(cell);
+        });
+        tb.appendChild(tr);
+      });
+      sc.appendChild(tb); d.appendChild(s); d.appendChild(sc); card.appendChild(d);
+    }
+    var files = [];
+    if (a.code) files.push({ name: a.file || 'index.html', code: a.code });
+    (a.extra || []).forEach(function(f){ files.push(f); });
+    files.forEach(function(f){
+      var lab = document.createElement('p'); lab.className = 'fname'; lab.textContent = f.name;
+      var bi = f.code.indexOf('<body');
+      var bs = f.code.indexOf('>', bi) + 1;
+      var be = f.code.indexOf('</body>');
+      var demo = document.createElement('div'); demo.className = f.tall ? 'demo tall' : 'demo';
+      demo.innerHTML = f.code.substring(bs, be).replace(/href="[^"]*"/g, 'href="#"').replace(/ target="_blank"/g, '').replace(/<img[^>]*>/g, '<span class="ph">google-logo.png</span>');
+      var cd = document.createElement('details'); cd.className = 'view';
+      var cs = document.createElement('summary'); cs.textContent = 'View the HTML code';
+      var cw = document.createElement('div'); cw.className = 'scroll';
+      var pre = document.createElement('pre'); pre.className = 'code'; pre.textContent = f.code;
+      cw.appendChild(pre); cd.appendChild(cs); cd.appendChild(cw);
+      card.appendChild(lab); card.appendChild(demo); card.appendChild(cd);
+    });
+    card.appendChild(box);
+    list.appendChild(card);
+  });
+})();
+</script>
+</body>
+</html>
